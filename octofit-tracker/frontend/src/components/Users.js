@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -17,7 +17,7 @@ function Users() {
   const apiUrl = `${baseUrl}/api/users/`;
   const teamsUrl = `${baseUrl}/api/teams/`;
 
-  const fetchUsers = () => {
+  const fetchUsers = useCallback(() => {
     fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
@@ -29,7 +29,7 @@ function Users() {
         setError(err.message);
         setLoading(false);
       });
-  };
+  }, [apiUrl]);
 
   useEffect(() => {
     fetchUsers();
@@ -40,7 +40,7 @@ function Users() {
         setTeams(items);
       })
       .catch(() => {});
-  }, [apiUrl, teamsUrl]);
+  }, [fetchUsers, teamsUrl]);
 
   const openEdit = (user) => {
     setEditUser(user);
