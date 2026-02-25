@@ -18,12 +18,12 @@ class Command(BaseCommand):
         # Create Users (Superheroes)
         self.stdout.write('Creating users...')
         users_data = [
-            {'name': 'Tony Stark', 'email': 'ironman@avengers.com', 'password': 'ironman123'},
-            {'name': 'Steve Rogers', 'email': 'cap@avengers.com', 'password': 'cap123'},
-            {'name': 'Thor Odinson', 'email': 'thor@avengers.com', 'password': 'thor123'},
-            {'name': 'Bruce Wayne', 'email': 'batman@justiceleague.com', 'password': 'batman123'},
-            {'name': 'Clark Kent', 'email': 'superman@justiceleague.com', 'password': 'superman123'},
-            {'name': 'Diana Prince', 'email': 'wonderwoman@justiceleague.com', 'password': 'ww123'},
+            {'name': 'Tony Stark', 'email': 'ironman@avengers.com', 'password': 'ironman123', 'team': 'Team Marvel'},
+            {'name': 'Steve Rogers', 'email': 'cap@avengers.com', 'password': 'cap123', 'team': 'Team Marvel'},
+            {'name': 'Thor Odinson', 'email': 'thor@avengers.com', 'password': 'thor123', 'team': 'Team Marvel'},
+            {'name': 'Bruce Wayne', 'email': 'batman@justiceleague.com', 'password': 'batman123', 'team': 'Team DC'},
+            {'name': 'Clark Kent', 'email': 'superman@justiceleague.com', 'password': 'superman123', 'team': 'Team DC'},
+            {'name': 'Diana Prince', 'email': 'wonderwoman@justiceleague.com', 'password': 'ww123', 'team': 'Team DC'},
         ]
         users = []
         for u in users_data:
@@ -61,16 +61,16 @@ class Command(BaseCommand):
         # Create LeaderBoard entries
         self.stdout.write('Creating leaderboard...')
         leaderboard_data = [
-            {'user': 'Tony Stark', 'score': 950},
-            {'user': 'Thor Odinson', 'score': 900},
-            {'user': 'Clark Kent', 'score': 880},
-            {'user': 'Diana Prince', 'score': 860},
-            {'user': 'Steve Rogers', 'score': 840},
-            {'user': 'Bruce Wayne', 'score': 820},
+            {'user': 'Tony Stark',    'score': 950, 'team': 'Team Marvel', 'calories': 600.0},
+            {'user': 'Thor Odinson',  'score': 900, 'team': 'Team Marvel', 'calories': 900.0},
+            {'user': 'Clark Kent',    'score': 880, 'team': 'Team DC',     'calories': 300.0},
+            {'user': 'Diana Prince',  'score': 860, 'team': 'Team DC',     'calories': 750.0},
+            {'user': 'Steve Rogers',  'score': 840, 'team': 'Team Marvel', 'calories': 450.0},
+            {'user': 'Bruce Wayne',   'score': 820, 'team': 'Team DC',     'calories': 1200.0},
         ]
         for lb in leaderboard_data:
             entry = LeaderBoard.objects.create(**lb)
-            self.stdout.write(f'  Created leaderboard entry: {entry.user} - {entry.score}')
+            self.stdout.write(f'  Created leaderboard entry: {entry.user} - {entry.score} ({entry.team}, {entry.calories} cal)')
 
         # Create Workouts
         self.stdout.write('Creating workouts...')
