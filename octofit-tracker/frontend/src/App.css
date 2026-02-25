@@ -1,0 +1,185 @@
+/* OctoFit Tracker - Main App Styles */
+
+body {
+  background-color: #f0f2f5;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Page content */
+.page-content {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+/* Component Cards */
+.component-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.component-card .card-header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom: none;
+}
+
+.component-card .card-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.component-card .card-body {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+/* Tables */
+.octofit-table {
+  margin-bottom: 0;
+}
+
+.octofit-table thead th {
+  background-color: #1a1a2e;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  border: none;
+  padding: 0.85rem 1rem;
+}
+
+.octofit-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.octofit-table tbody tr:hover {
+  background-color: #f0f4ff;
+}
+
+.octofit-table td {
+  vertical-align: middle;
+  padding: 0.75rem 1rem;
+  border-color: #e9ecef;
+}
+
+/* Rank badge */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.rank-1 { background-color: #FFD700; color: #333; }
+.rank-2 { background-color: #C0C0C0; color: #333; }
+.rank-3 { background-color: #CD7F32; color: #fff; }
+.rank-other { background-color: #e9ecef; color: #555; }
+
+/* Score bar */
+.score-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  transition: width 0.6s ease;
+}
+
+/* Welcome hero */
+.welcome-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.welcome-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.welcome-hero p {
+  font-size: 1.15rem;
+  opacity: 0.85;
+}
+
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-card .card-body {
+  padding: 1.5rem;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #1a1a2e;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
