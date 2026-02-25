@@ -18,6 +18,9 @@ if codespace_name:
 else:
     base_url = "http://localhost:8000"
 
+# REST API endpoint base: https://$CODESPACE_NAME-8000.app.github.dev/api/[component]/
+API_BASE_URL = f"{base_url}/api/"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', api_root, name='api-root'),
